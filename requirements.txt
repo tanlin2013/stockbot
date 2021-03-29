@@ -1,3 +1,11 @@
 shioaji==0.3.1.dev8
 pandas==1.1.5
 pytorch==1.6.0
+yfinance==0.1.59
+setuptools==51.0.0.post20201207
+torch==1.6.0
+mplfinance==0.12.7a10
+numpy==1.19.2
+scikit-learn==0.24.1
+matplotlib==3.4.0
+modAL==0.4.1
