@@ -1,11 +1,11 @@
 import unittest
-from stockbot.api.session import Session
+from stockbot.api.sinotrade.session import Session
 
 
 class TestSession(unittest.TestCase):
 
     def test_init(self):
-        api = Session(dry_run=False)
+        api = Session(dry_run=True)
         api.close()
 
 

@@ -1,7 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: build doc & test
+name: build doc
 on: [push]
 jobs:
 
@@ -13,16 +13,11 @@ jobs:
         uses: ammaraskar/sphinx-action@master
         with:
           docs-folder: "docs/"
-          pre-build-command: "pip install m2r==0.2.1 sphinx-rtd-theme==0.5.1"
+          pre-build-command: "pip install -r requirements.txt && pip install -r docs/requirements.txt"
+          build-command: "make html"
 
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          python-version: '3.7'
-      - name: Test
-        uses: onichandame/python-test-action@master
-        with:
-          deps_list: 'requirements.txt'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/build/html

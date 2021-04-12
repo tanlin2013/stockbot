@@ -1,5 +1,18 @@
 import numpy as np
-from stockbot.api.yahoo_finance import YahooFinance
+import pandas as pd
+from stockbot.api.yahoo.market import Market
+
+
+class MovingAverage(Market):
+
+    def __init__(self, ticker_code: str):
+        super(MovingAverage, self).__init__(ticker_code)
+
+    def sma(self):
+        return
+
+    def ema(self):
+        return
 
 
 class MovingAverageConvergenceDivergence:
@@ -7,7 +20,7 @@ class MovingAverageConvergenceDivergence:
     def __init__(self):
         pass
 
-    def plot(self):
+    def macd(self):
         pass
 
 
@@ -30,6 +43,24 @@ class LondonBreakout:
 
 
 class AwesomeOscillator:
+
+    def __init__(self):
+        pass
+
+
+class ParabolicStopAndReverse:
+
+    def __init__(self):
+        pass
+
+
+class BollingerBands:
+
+    def __init__(self):
+        pass
+
+
+class RelativeStrengthIndex:
 
     def __init__(self):
         pass

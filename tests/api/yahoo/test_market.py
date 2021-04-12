@@ -1,13 +1,11 @@
 import unittest
-from stockbot.api.yahoo_finance import (
-    YahooFinance,
-    MovingAveragePeriod as MAv
-)
+from stockbot.api.yahoo.market import Market
+from stockbot.api.yahoo.constant import MovingAveragePeriod as MAv
 
 
-class TestYahooFinance(unittest.TestCase):
+class TestMarket(unittest.TestCase):
 
-    ticker = YahooFinance('2330.TW')
+    ticker = Market('2330.TW')
 
     def test_ticker_code(self):
         self.assertEqual('2330.TW', self.ticker.ticker_code)

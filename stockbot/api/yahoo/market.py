@@ -1,29 +1,16 @@
-from yfinance import Ticker
-import mplfinance as mpf
 import json
+import mplfinance as mpf
+import yfinance
+from yfinance import Ticker
 from typing import Tuple
-from enum import Enum
+from stockbot.api.yahoo.constant import MovingAveragePeriod
 
 
-class MovingAveragePeriod(Enum):
-    OneDay = '1d'
-    FiveDay = '5d'
-    OneMth = '1mo'
-    ThreeMth = '3mo'
-    SixMth = '6mo'
-    OneYear = '1y'
-    TwoYear = '2y'
-    FiveYear = '5y'
-    TenYear = '10y'
-    YearToDate = 'ytd'
-    Max = 'max'
-
-
-class YahooFinance(Ticker):
+class Market(Ticker):
 
     def __init__(self, ticker_code: str):
-        super(YahooFinance, self).__init__(ticker_code)
-        self._ticker_code = ticker_code
+        super(Market, self).__init__(ticker_code)
+        self._ticker_code = ticker_code.upper()
 
     @property
     def ticker_code(self) -> str:

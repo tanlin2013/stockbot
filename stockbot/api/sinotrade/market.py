@@ -1,8 +1,8 @@
 import pandas as pd
 from datetime import datetime
 from shioaji.constant import QuoteType
-from stockbot.api.session import Session
-from stockbot.api.constant import *
+from stockbot.api.sinotrade.session import Session
+from stockbot.api.sinotrade.constant import *
 
 
 class Stock:
@@ -23,7 +23,7 @@ class Market(Session):
             intraday_odd=intraday_odd
         )
 
-    def history(self, ticker_code: str, start: datetime, end: datetime):
+    def history(self, ticker_code: str, start: datetime, end: datetime) -> pd.DataFrame:
         kbars = self.api.kbars(
             Stock(self.api, ticker_code),
             start=start,
