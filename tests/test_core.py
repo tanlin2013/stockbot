@@ -9,6 +9,20 @@ class TestStockBot(unittest.TestCase):
 
     bot = StockBot("2330.TW", MAv.SixMth)
 
+    def test_df(self):
+        self.assertCountEqual(
+            [
+                'Open',
+                'High',
+                'Low',
+                'Close',
+                'Volume',
+                'Dividends',
+                'Stock Splits'
+            ],
+            self.bot.df
+        )
+
     def test_strategy(self):
         self.assertEqual("All", self.bot.strategy.name)
 

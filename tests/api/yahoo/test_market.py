@@ -1,6 +1,6 @@
 import unittest
 from stockbot.api.yahoo.market import Market
-from stockbot.api.yahoo.constant import MovingAveragePeriod as MAv
+from stockbot.constant.yahoo import MovingAveragePeriod as MAv
 
 
 class TestMarket(unittest.TestCase):
