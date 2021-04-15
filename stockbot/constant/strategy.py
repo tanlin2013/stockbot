@@ -2,5 +2,5 @@ from enum import Enum
 
 
 class BuiltinStrategy(Enum):
-    All = 1
-    Common = 2
+    All = "All"
+    Common = "Common"
