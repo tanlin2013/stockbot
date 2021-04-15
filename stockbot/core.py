@@ -2,8 +2,8 @@ import pandas as pd
 import pandas_ta as ta
 from typing import List, Dict
 from stockbot.api.yahoo.market import *
-from stockbot.api.yahoo.constant import MovingAveragePeriod
-from stockbot.constant import BuiltinStrategy
+from stockbot.constant.yahoo import MovingAveragePeriod
+from stockbot.constant.strategy import BuiltinStrategy
 
 
 class StockBot(Market):
@@ -13,7 +13,7 @@ class StockBot(Market):
                  builtin_strategy: BuiltinStrategy = BuiltinStrategy.All):
         super(StockBot, self).__init__(ticker_code)
         self._df = self.history(mav.value)
-        self._strategy = ta.Strategy(builtin_strategy.name)
+        self._strategy = ta.Strategy(builtin_strategy.value)
 
     @property
     def df(self) -> pd.DataFrame:

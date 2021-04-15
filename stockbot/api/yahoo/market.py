@@ -1,9 +1,8 @@
 import json
 import mplfinance as mpf
-import yfinance
 from yfinance import Ticker
 from typing import Tuple
-from stockbot.api.yahoo.constant import MovingAveragePeriod
+from stockbot.constant.yahoo import MovingAveragePeriod
 
 
 class Market(Ticker):
