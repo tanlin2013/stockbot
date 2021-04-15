@@ -6,11 +6,14 @@
 Welcome to stockbot's documentation!
 ====================================
 
+.. mdinclude:: ../../README.md
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
    :caption: Contents:
 
-
+   modules.rst
+   stockbot.rst
 
 Indices and tables
 ==================
