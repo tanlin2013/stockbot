@@ -24,15 +24,15 @@ mainly focuses on Taiwanese stock market,
 
   - using pip:
 
-    ``
-      pip install git+https://github.com/tanlin2013/stockbot@main
-    ``
+    ```
+    pip install git+https://github.com/tanlin2013/stockbot@main
+    ```
     
   - using Docker container (required to build from source):
     
-    ``
+    ```
     make build & make run 
-    ``
+    ```
 
 #### 3. Tutorials ####
 
