@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>stockbot.api.sinotrade package &mdash; stockbot  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> stockbot
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="stockbot.html">stockbot package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">stockbot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>stockbot.api.sinotrade package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/stockbot.api.sinotrade.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="stockbot-api-sinotrade-package">
+<h1>stockbot.api.sinotrade package<a class="headerlink" href="#stockbot-api-sinotrade-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-stockbot.api.sinotrade.market">
+<span id="stockbot-api-sinotrade-market-module"></span><h2>stockbot.api.sinotrade.market module<a class="headerlink" href="#module-stockbot.api.sinotrade.market" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="stockbot.api.sinotrade.market.Market">
+<em class="property">class </em><code class="sig-prename descclassname">stockbot.api.sinotrade.market.</code><code class="sig-name descname">Market</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dry_run</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">10000</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/stockbot/api/sinotrade/market.html#Market"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.market.Market" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#stockbot.api.sinotrade.session.Session" title="stockbot.api.sinotrade.session.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">stockbot.api.sinotrade.session.Session</span></code></a></p>
+<dl class="py method">
+<dt id="stockbot.api.sinotrade.market.Market.history">
+<code class="sig-name descname">history</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ticker_code</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">start</span><span class="p">:</span> <span class="n">datetime.datetime</span></em>, <em class="sig-param"><span class="n">end</span><span class="p">:</span> <span class="n">datetime.datetime</span></em><span class="sig-paren">)</span> &#x2192; pandas.core.frame.DataFrame<a class="reference internal" href="_modules/stockbot/api/sinotrade/market.html#Market.history"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.market.Market.history" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="stockbot.api.sinotrade.market.Market.snapshot">
+<code class="sig-name descname">snapshot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/stockbot/api/sinotrade/market.html#Market.snapshot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.market.Market.snapshot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="stockbot.api.sinotrade.market.Market.streaming">
+<code class="sig-name descname">streaming</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ticker_code</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">intraday_odd</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/stockbot/api/sinotrade/market.html#Market.streaming"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.market.Market.streaming" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="stockbot.api.sinotrade.market.Market.touch_price">
+<code class="sig-name descname">touch_price</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">topic</span></em>, <em class="sig-param"><span class="n">quote</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/stockbot/api/sinotrade/market.html#Market.touch_price"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.market.Market.touch_price" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="stockbot.api.sinotrade.market.Market.trade">
+<code class="sig-name descname">trade</code><span class="sig-paren">(</span><em class="sig-param">ticker_code: str</em>, <em class="sig-param">price: float</em>, <em class="sig-param">quantity: int = 1</em>, <em class="sig-param">action: shioaji.constant.Action = &lt;Action.Buy: 'Buy'&gt;</em>, <em class="sig-param">price_type: shioaji.constant.StockPriceType = &lt;StockPriceType.LMT: 'LMT'&gt;</em>, <em class="sig-param">order_type: shioaji.constant.StockOrderType = &lt;StockOrderType.Common: 'Common'&gt;</em>, <em class="sig-param">order_lot: str = 'Common'</em><span class="sig-paren">)</span> &#x2192; shioaji.order.Trade<a class="reference internal" href="_modules/stockbot/api/sinotrade/market.html#Market.trade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.market.Market.trade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="stockbot.api.sinotrade.market.Market.update_status">
+<code class="sig-name descname">update_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>shioaji.order.Trade<span class="p">]</span><a class="reference internal" href="_modules/stockbot/api/sinotrade/market.html#Market.update_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.market.Market.update_status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="stockbot.api.sinotrade.market.Stock">
+<em class="property">class </em><code class="sig-prename descclassname">stockbot.api.sinotrade.market.</code><code class="sig-name descname">Stock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">api</span></em>, <em class="sig-param"><span class="n">ticker_code</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/stockbot/api/sinotrade/market.html#Stock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.market.Stock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-stockbot.api.sinotrade.session">
+<span id="stockbot-api-sinotrade-session-module"></span><h2>stockbot.api.sinotrade.session module<a class="headerlink" href="#module-stockbot.api.sinotrade.session" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="stockbot.api.sinotrade.session.Session">
+<em class="property">class </em><code class="sig-prename descclassname">stockbot.api.sinotrade.session.</code><code class="sig-name descname">Session</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dry_run</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">10000</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/stockbot/api/sinotrade/session.html#Session"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.session.Session" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="stockbot.api.sinotrade.session.Session.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/stockbot/api/sinotrade/session.html#Session.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.session.Session.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-stockbot.api.sinotrade">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-stockbot.api.sinotrade" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, TaoLin.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
