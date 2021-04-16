@@ -10,17 +10,14 @@ jobs:
     env:
       PY_PKG_NAME: stockbot
     steps:
-      - name: Pre-build
-        run: |
-          pip install -r requirements.txt
-          pip install -r docs/requirements.txt
-          sphinx-apidoc -o source/ ../$PY_PKG_NAME/
-
       - uses: actions/checkout@v1
       - name: Build Sphinx doc
         uses: ammaraskar/sphinx-action@master
         with:
           docs-folder: "docs/"
+          pre-build-command: "pip install -r requirements.txt &&\
+            pip install -r docs/requirements.txt &&\
+            sphinx-apidoc -o docs/source/ $PY_PKG_NAME/"
           build-command: "make html"
 
       - name: Deploy
