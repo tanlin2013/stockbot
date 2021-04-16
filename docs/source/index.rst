@@ -12,7 +12,6 @@ Welcome to stockbot's documentation!
    :maxdepth: 5
    :caption: Contents:
 
-   modules.rst
    stockbot.rst
 
 Indices and tables
