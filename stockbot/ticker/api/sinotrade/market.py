@@ -3,7 +3,7 @@ from datetime import datetime
 from typing import List
 from shioaji.constant import *
 from shioaji.order import Trade
-from stockbot.api.sinotrade.session import Session
+from stockbot.ticker.api.sinotrade.session import Session
 
 
 class Stock:
@@ -65,4 +65,5 @@ class Market(Session):
         return self.api.list_trades()
 
     def touch_price(self, topic, quote):
+        # TODO:
         raise NotImplementedError

@@ -1,5 +1,5 @@
 import unittest
-from stockbot.api.yahoo.market import Market
+from stockbot.ticker.api import Market
 from stockbot.constant.yahoo import MovingAveragePeriod as MAv
 
 

@@ -1,41 +1,14 @@
 stockbot.api package
 ====================
 
-Submodules
-----------
+Subpackages
+-----------
 
-stockbot.api.constant module
-----------------------------
+.. toctree::
+   :maxdepth: 4
 
-.. automodule:: stockbot.api.constant
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-stockbot.api.market module
---------------------------
-
-.. automodule:: stockbot.api.market
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-stockbot.api.session module
----------------------------
-
-.. automodule:: stockbot.api.session
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-stockbot.api.yahoo\_finance module
-----------------------------------
-
-.. automodule:: stockbot.api.yahoo_finance
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
+   stockbot.api.sinotrade
+   stockbot.api.yahoo
 
 Module contents
 ---------------

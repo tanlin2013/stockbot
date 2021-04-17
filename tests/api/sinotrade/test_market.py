@@ -1,5 +1,5 @@
 import unittest
-from stockbot.api.sinotrade.market import Market
+from stockbot.ticker.api.sinotrade.market import Market
 
 
 class TestMarket(unittest.TestCase):

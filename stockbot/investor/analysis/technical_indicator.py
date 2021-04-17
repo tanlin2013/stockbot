@@ -1,6 +1,4 @@
-import numpy as np
-import pandas as pd
-from stockbot.api.yahoo.market import Market
+from stockbot.ticker.api import Market
 
 
 class MovingAverage(Market):

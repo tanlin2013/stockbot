@@ -1,5 +1,5 @@
 import unittest
-from stockbot.model.bayesian_optimizer import BayesianOptimizer, Acquisition
+from stockbot.investor.model.bayesian_optimizer import BayesianOptimizer, Acquisition
 from sklearn.gaussian_process.kernels import Matern
 import numpy as np
 

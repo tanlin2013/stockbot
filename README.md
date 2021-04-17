@@ -7,14 +7,20 @@ This is a research program aims at autonomous stock trading,
 mainly focuses on Taiwanese stock market,
 [TWSE](https://www.twse.com.tw/zh/).
 
-### Introduction ###
+This project is still on early development and subject to change.
 
+### Goals ###
+
+* reinforced, self-supervised or unsupervised investor
+* unsupervised screener
+* proceed with human permission on telegram
+* deploy to aws
 
 ### Get started ###
 
 #### 1. Dependencies ####
 
-  * [Shioaji](https://sinotrade.github.io/) (sinotrade's trading API)
+  * [shioaji](https://sinotrade.github.io/) (sinotrade's trading API)
   * [yfinance](https://github.com/ranaroussi/yfinance) (for downloading open data from yahoo finance)
   * [pandas-ta](https://github.com/twopirllc/pandas-ta) (technical indicators with pandas)
 
@@ -35,6 +41,7 @@ mainly focuses on Taiwanese stock market,
     ```
 
 #### 3. Tutorials ####
+TBA
 
 ### Documentation ###
 For details about stockbot,

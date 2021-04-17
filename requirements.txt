@@ -9,3 +9,4 @@ matplotlib==3.4.1
 mplfinance==0.12.7a10
 modal==0.4.1
 torch==1.6.0
+tsfresh==0.18.0

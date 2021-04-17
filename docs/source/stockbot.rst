@@ -5,11 +5,13 @@ Subpackages
 -----------
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 10
 
    stockbot.analysis
    stockbot.api
+   stockbot.constant
    stockbot.model
+   stockbot.visualization
 
 Submodules
 ----------

@@ -1,5 +1,5 @@
 import unittest
-from stockbot.api.sinotrade.session import Session
+from stockbot.ticker.api.sinotrade.session import Session
 
 
 class TestSession(unittest.TestCase):

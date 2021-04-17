@@ -1,7 +1,6 @@
 import pandas as pd
 import pandas_ta as ta
 from typing import List, Dict
-from stockbot.api.yahoo.market import *
 from stockbot.constant.yahoo import MovingAveragePeriod
 from stockbot.constant.strategy import BuiltinStrategy
 
