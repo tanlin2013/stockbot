@@ -13,6 +13,6 @@ jobs:
         with:
           python-version: '3.7'
       - name: Test
-        uses: onichandame/python-tests-action@master
+        uses: onichandame/python-test-action@master
         with:
           deps_list: 'requirements.txt'
