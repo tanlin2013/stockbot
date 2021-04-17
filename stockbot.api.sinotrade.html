@@ -39,7 +39,9 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="stockbot.api.yahoo package" href="stockbot.api.yahoo.html" />
+    <link rel="prev" title="stockbot.api package" href="stockbot.api.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,8 +87,26 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="stockbot.html">stockbot package</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="stockbot.analysis.html">stockbot.analysis package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="stockbot.api.html">stockbot.api package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="stockbot.api.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">stockbot.api.sinotrade package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stockbot-api-sinotrade-market-module">stockbot.api.sinotrade.market module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stockbot-api-sinotrade-session-module">stockbot.api.sinotrade.session module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="stockbot.api.yahoo.html">stockbot.api.yahoo package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="stockbot.api.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stockbot.constant.html">stockbot.constant package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockbot.model.html">stockbot.model package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockbot.visualization.html">stockbot.visualization package</a></li>
 </ul>
 
             
@@ -135,6 +155,8 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
+          <li><a href="stockbot.api.html">stockbot.api package</a> &raquo;</li>
+        
       <li>stockbot.api.sinotrade package</li>
     
     
@@ -159,67 +181,14 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-stockbot.api.sinotrade.market">
-<span id="stockbot-api-sinotrade-market-module"></span><h2>stockbot.api.sinotrade.market module<a class="headerlink" href="#module-stockbot.api.sinotrade.market" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="stockbot.api.sinotrade.market.Market">
-<em class="property">class </em><code class="sig-prename descclassname">stockbot.api.sinotrade.market.</code><code class="sig-name descname">Market</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dry_run</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">10000</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/stockbot/api/sinotrade/market.html#Market"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.market.Market" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#stockbot.api.sinotrade.session.Session" title="stockbot.api.sinotrade.session.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">stockbot.api.sinotrade.session.Session</span></code></a></p>
-<dl class="py method">
-<dt id="stockbot.api.sinotrade.market.Market.history">
-<code class="sig-name descname">history</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ticker_code</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">start</span><span class="p">:</span> <span class="n">datetime.datetime</span></em>, <em class="sig-param"><span class="n">end</span><span class="p">:</span> <span class="n">datetime.datetime</span></em><span class="sig-paren">)</span> &#x2192; pandas.core.frame.DataFrame<a class="reference internal" href="_modules/stockbot/api/sinotrade/market.html#Market.history"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.market.Market.history" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="stockbot.api.sinotrade.market.Market.snapshot">
-<code class="sig-name descname">snapshot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/stockbot/api/sinotrade/market.html#Market.snapshot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.market.Market.snapshot" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="stockbot.api.sinotrade.market.Market.streaming">
-<code class="sig-name descname">streaming</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ticker_code</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">intraday_odd</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/stockbot/api/sinotrade/market.html#Market.streaming"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.market.Market.streaming" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="stockbot.api.sinotrade.market.Market.touch_price">
-<code class="sig-name descname">touch_price</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">topic</span></em>, <em class="sig-param"><span class="n">quote</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/stockbot/api/sinotrade/market.html#Market.touch_price"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.market.Market.touch_price" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="stockbot.api.sinotrade.market.Market.trade">
-<code class="sig-name descname">trade</code><span class="sig-paren">(</span><em class="sig-param">ticker_code: str</em>, <em class="sig-param">price: float</em>, <em class="sig-param">quantity: int = 1</em>, <em class="sig-param">action: shioaji.constant.Action = &lt;Action.Buy: 'Buy'&gt;</em>, <em class="sig-param">price_type: shioaji.constant.StockPriceType = &lt;StockPriceType.LMT: 'LMT'&gt;</em>, <em class="sig-param">order_type: shioaji.constant.StockOrderType = &lt;StockOrderType.Common: 'Common'&gt;</em>, <em class="sig-param">order_lot: str = 'Common'</em><span class="sig-paren">)</span> &#x2192; shioaji.order.Trade<a class="reference internal" href="_modules/stockbot/api/sinotrade/market.html#Market.trade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.market.Market.trade" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="stockbot.api.sinotrade.market.Market.update_status">
-<code class="sig-name descname">update_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>shioaji.order.Trade<span class="p">]</span><a class="reference internal" href="_modules/stockbot/api/sinotrade/market.html#Market.update_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.market.Market.update_status" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="stockbot.api.sinotrade.market.Stock">
-<em class="property">class </em><code class="sig-prename descclassname">stockbot.api.sinotrade.market.</code><code class="sig-name descname">Stock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">api</span></em>, <em class="sig-param"><span class="n">ticker_code</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/stockbot/api/sinotrade/market.html#Stock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.market.Stock" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-</dd></dl>
-
+<div class="section" id="stockbot-api-sinotrade-market-module">
+<h2>stockbot.api.sinotrade.market module<a class="headerlink" href="#stockbot-api-sinotrade-market-module" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-stockbot.api.sinotrade.session">
-<span id="stockbot-api-sinotrade-session-module"></span><h2>stockbot.api.sinotrade.session module<a class="headerlink" href="#module-stockbot.api.sinotrade.session" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="stockbot.api.sinotrade.session.Session">
-<em class="property">class </em><code class="sig-prename descclassname">stockbot.api.sinotrade.session.</code><code class="sig-name descname">Session</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dry_run</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">10000</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/stockbot/api/sinotrade/session.html#Session"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.session.Session" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt id="stockbot.api.sinotrade.session.Session.close">
-<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/stockbot/api/sinotrade/session.html#Session.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.api.sinotrade.session.Session.close" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+<div class="section" id="stockbot-api-sinotrade-session-module">
+<h2>stockbot.api.sinotrade.session module<a class="headerlink" href="#stockbot-api-sinotrade-session-module" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-stockbot.api.sinotrade">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-stockbot.api.sinotrade" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -228,6 +197,10 @@
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="stockbot.api.yahoo.html" class="btn btn-neutral float-right" title="stockbot.api.yahoo package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="stockbot.api.html" class="btn btn-neutral float-left" title="stockbot.api package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

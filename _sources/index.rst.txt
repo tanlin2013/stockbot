@@ -9,10 +9,15 @@ Welcome to stockbot's documentation!
 .. mdinclude:: ../../README.md
 
 .. toctree::
-   :maxdepth: 5
+   :maxdepth: 10
    :caption: Contents:
 
-   stockbot.rst
+   stockbot.analysis
+   stockbot.api
+   stockbot.constant
+   stockbot.model
+   stockbot.visualization
+   stockbot.core
 
 Indices and tables
 ==================
