@@ -1,12 +1,22 @@
 import unittest
-from stockbot.ticker.api.sinotrade.session import Session
+import shioaji as sj
+from stockbot.ticker.sinotrade.session import Session
 
 
 class TestSession(unittest.TestCase):
 
-    def test_init(self):
-        api = Session(dry_run=True)
-        api.close()
+    session = Session()
+
+    def test_session_account(self):
+        self.assertTrue(
+            isinstance(
+                self.session.stock_account,
+                sj.account.StockAccount
+            )
+        )
+        self.assertTrue(
+            self.session.stock_account.person_id.startswith('PAPIUSER0')
+        )
 
 
 if __name__ == '__main__':

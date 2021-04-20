@@ -1,13 +1,13 @@
 import unittest
-from stockbot.core import (
-    StockBot,
+from stockbot.ticker.core import (
+    Ticker,
     MovingAveragePeriod as MAv
 )
 
 
 class TestStockBot(unittest.TestCase):
 
-    bot = StockBot("2330.TW", MAv.SixMth)
+    bot = Ticker("2330.TW", MAv.SixMth)
 
     def test_df(self):
         self.assertCountEqual(

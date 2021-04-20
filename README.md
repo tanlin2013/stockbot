@@ -23,6 +23,8 @@ This project is still on early development and subject to change.
   * [shioaji](https://sinotrade.github.io/) (sinotrade's trading API)
   * [yfinance](https://github.com/ranaroussi/yfinance) (for downloading open data from yahoo finance)
   * [pandas-ta](https://github.com/twopirllc/pandas-ta) (technical indicators with pandas)
+  * [tsfresh](https://github.com/blue-yonder/tsfresh) (backbone for feature extraction)
+  * [autots](https://github.com/winedarksea/autots) (forcasting model)
 
   See `requirements.txt` for details.
 
