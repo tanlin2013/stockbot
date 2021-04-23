@@ -1,1 +1,1 @@
-from market import Market
+from stockbot.ticker.yahoo.market import Market

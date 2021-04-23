@@ -1,6 +1,6 @@
 import unittest
 import shioaji as sj
-from stockbot.ticker.sinotrade.session import Session
+from stockbot.ticker.sinotrade import Session
 
 
 class TestSession(unittest.TestCase):

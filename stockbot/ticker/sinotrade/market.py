@@ -1,54 +1,56 @@
 import pandas as pd
 from datetime import datetime
-from typing import List, Callable
+from typing import List
 from shioaji.constant import *
 from shioaji.order import Trade
 from shioaji.contracts import Stock
 from stockbot.ticker.sinotrade.session import Session
-
-
-def to_dataframe(func: Callable) -> Callable:
-    def wrapper(*args, **kwargs) -> pd.DataFrame:
-        _data = func(*args, **kwargs)
-        df = pd.DataFrame(_data) if type(_data) is list \
-            else pd.DataFrame({**_data})
-        df.ts = pd.to_datetime(df.ts)
-        return df
-    return wrapper
+from stockbot.ticker.utils import *
 
 
 class Market:
 
-    def __init__(self, dry_run: bool = True, timeout: int = 10000) -> None:
+    def __init__(self, ticker_symbol: str, dry_run: bool = True, timeout: int = 10000) -> None:
         self.api = Session(timeout=timeout)
+        self._ticker_symbol = ticker_symbol
         self._dry_run = dry_run
         # TODO: dry run is yet been implemented
+
+    @property
+    def ticker_symbol(self) -> str:
+        return self._ticker_symbol
 
     @property
     def dry_run(self) -> bool:
         return self._dry_run
 
-    def _stock(self, ticker_code: str) -> Stock:
-        return self.api.Contracts.Stocks[ticker_code]
+    def _stock(self, ticker_symbol: str) -> Stock:
+        return self.api.Contracts.Stocks[ticker_symbol]
 
-    @to_dataframe
-    def ticks(self, ticker_code: str, date: datetime) -> pd.DataFrame:
-        return self.api.ticks(self._stock(ticker_code), date.strftime('%Y-%m-%d'))
+    @property
+    def stock(self) -> Stock:
+        return self._stock(self.ticker_symbol)
 
+    @df_lower_columns
     @to_dataframe
-    def kbars(self, ticker_code: str, start: datetime, end: datetime) -> pd.DataFrame:
+    def ticks(self, date: datetime) -> pd.DataFrame:
+        return self.api.ticks(self.stock, date.strftime('%Y-%m-%d'))
+
+    @df_lower_columns
+    @to_dataframe
+    def kbars(self, start: datetime, end: datetime) -> pd.DataFrame:
         return self.api.kbars(
-            self._stock(ticker_code),
+            self.stock,
             start=start.strftime('%Y-%m-%d'),
             end=end.strftime('%Y-%m-%d')
         )
 
+    @df_lower_columns
     @to_dataframe
-    def snapshot(self, ticker_codes: List[str]) -> pd.DataFrame:
-        return self.api.snapshots(list(map(self._stock, ticker_codes)))
+    def snapshot(self, ticker_symbols: List[str]) -> pd.DataFrame:
+        return self.api.snapshots(list(map(self._stock, ticker_symbols)))
 
     def place_order(self,
-                    ticker_code: str,
                     price: float,
                     quantity: int = 1,
                     action: Action = Action.Buy,
@@ -66,7 +68,7 @@ class Market:
             account=self.api.stock_account
         )
         return self.api.place_order(
-            self._stock(ticker_code),
+            self.stock,
             order
         )
 
@@ -79,12 +81,11 @@ class Market:
         raise NotImplementedError
 
     def streaming(self,
-                  ticker_code: str,
                   quote_type: QuoteType = QuoteType.Tick,
                   intraday_odd: bool = False
                   ) -> None:
         self.api.quote.subscribe(
-            contract=self._stock(ticker_code),
+            contract=self.stock,
             quote_type=quote_type,
             intraday_odd=intraday_odd
         )

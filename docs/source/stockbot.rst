@@ -7,23 +7,11 @@ Subpackages
 .. toctree::
    :maxdepth: 10
 
-   stockbot.analysis
-   stockbot.api
    stockbot.constant
-   stockbot.model
+   stockbot.investor
+   stockbot.screener
+   stockbot.ticker
    stockbot.visualization
-
-Submodules
-----------
-
-stockbot.core module
---------------------
-
-.. automodule:: stockbot.core
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 
 Module contents
 ---------------

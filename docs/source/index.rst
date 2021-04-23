@@ -12,12 +12,7 @@ Welcome to stockbot's documentation!
    :maxdepth: 10
    :caption: Contents:
 
-   stockbot.analysis
-   stockbot.api
-   stockbot.constant
-   stockbot.model
-   stockbot.visualization
-   stockbot.core
+   stockbot.rst
 
 Indices and tables
 ==================

@@ -14,5 +14,8 @@ jobs:
           python-version: '3.7'
       - name: Test
         uses: onichandame/python-test-action@master
+        env:
+          SINOTRADE_ID: ${{ secrets.SINOTRADE_ID }}
+          SINOTRADE_PASSWD: ${{ secrets.SINOTRADE_PASSWD }}
         with:
           deps_list: 'requirements.txt'

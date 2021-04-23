@@ -1,15 +1,16 @@
-from enum import Enum
+from dataclasses import dataclass
 
 
-class MovingAveragePeriod(Enum):
-    OneDay = '1d'
-    FiveDay = '5d'
-    OneMth = '1mo'
-    ThreeMth = '3mo'
-    SixMth = '6mo'
-    OneYear = '1y'
-    TwoYear = '2y'
-    FiveYear = '5y'
-    TenYear = '10y'
-    YearToDate = 'ytd'
-    Max = 'max'
+@dataclass
+class MovingAveragePeriod:
+    OneDay: str = '1d'
+    FiveDay: str = '5d'
+    OneMth: str = '1mo'
+    ThreeMth: str = '3mo'
+    SixMth: str = '6mo'
+    OneYear: str = '1y'
+    TwoYear: str = '2y'
+    FiveYear: str = '5y'
+    TenYear: str = '10y'
+    YearToDate: str = 'ytd'
+    Max: str = 'max'

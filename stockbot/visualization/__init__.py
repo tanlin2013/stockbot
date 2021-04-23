@@ -1,0 +1,1 @@
+from stockbot.visualization.moving_average import MovingAverage
