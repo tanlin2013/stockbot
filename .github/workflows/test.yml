@@ -23,9 +23,9 @@ jobs:
           sudo make install
 
       - name: Test
-        uses: onichandame/python-test-action@master
         env:
           SINOTRADE_ID: ${{ secrets.SINOTRADE_ID }}
           SINOTRADE_PASSWD: ${{ secrets.SINOTRADE_PASSWD }}
-        with:
-          deps_list: 'requirements.txt'
+        run: |
+          pip install -r requirements.txt
+          python -m unittest discover -s test -p 'test_*.py'
