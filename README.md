@@ -11,10 +11,10 @@ This project is still on early development and subject to change.
 
 ### Goals ###
 
-* reinforced, self-supervised or unsupervised investor
-* unsupervised screener
-* proceed with human permission on telegram
-* deploy to aws
+* Reinforced, self-supervised or unsupervised investor
+* Unsupervised screener
+* Proceed with human permission on Telegram
+* Deploy to AWS
 
 ### Get started ###
 
@@ -22,7 +22,7 @@ This project is still on early development and subject to change.
 
   * [shioaji](https://sinotrade.github.io/) (sinotrade's trading API)
   * [yfinance](https://github.com/ranaroussi/yfinance) (for downloading open data from yahoo finance)
-  * [pandas-ta](https://github.com/twopirllc/pandas-ta) (technical indicators with pandas)
+  * [ta-lib](https://github.com/mrjbq7/ta-lib) (technical indicators)
   * [tsfresh](https://github.com/blue-yonder/tsfresh) (backbone for feature extraction)
   * [autots](https://github.com/winedarksea/autots) (forcasting model)
 
