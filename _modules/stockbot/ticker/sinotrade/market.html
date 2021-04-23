@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>stockbot.ticker.sinotrade.market &mdash; stockbot  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> stockbot
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stockbot.html">stockbot package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">stockbot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>stockbot.ticker.sinotrade.market</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for stockbot.ticker.sinotrade.market</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">shioaji.constant</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">shioaji.order</span> <span class="kn">import</span> <span class="n">Trade</span>
+<span class="kn">from</span> <span class="nn">shioaji.contracts</span> <span class="kn">import</span> <span class="n">Stock</span>
+<span class="kn">from</span> <span class="nn">stockbot.ticker.sinotrade.session</span> <span class="kn">import</span> <span class="n">Session</span>
+<span class="kn">from</span> <span class="nn">stockbot.ticker.utils</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<div class="viewcode-block" id="Market"><a class="viewcode-back" href="../../../../stockbot.ticker.sinotrade.html#stockbot.ticker.sinotrade.market.Market">[docs]</a><span class="k">class</span> <span class="nc">Market</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ticker_symbol</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">dry_run</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api</span> <span class="o">=</span> <span class="n">Session</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ticker_symbol</span> <span class="o">=</span> <span class="n">ticker_symbol</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dry_run</span> <span class="o">=</span> <span class="n">dry_run</span>
+        <span class="c1"># TODO: dry run is yet been implemented</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ticker_symbol</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ticker_symbol</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dry_run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dry_run</span>
+
+    <span class="k">def</span> <span class="nf">_stock</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ticker_symbol</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Stock</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">Contracts</span><span class="o">.</span><span class="n">Stocks</span><span class="p">[</span><span class="n">ticker_symbol</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">stock</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Stock</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stock</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ticker_symbol</span><span class="p">)</span>
+
+    <span class="nd">@df_lower_columns</span>
+    <span class="nd">@to_dataframe</span>
+    <span class="k">def</span> <span class="nf">ticks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="p">:</span> <span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">ticks</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stock</span><span class="p">,</span> <span class="n">date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">))</span>
+
+    <span class="nd">@df_lower_columns</span>
+    <span class="nd">@to_dataframe</span>
+    <span class="k">def</span> <span class="nf">kbars</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">end</span><span class="p">:</span> <span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">kbars</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stock</span><span class="p">,</span>
+            <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">),</span>
+            <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="nd">@df_lower_columns</span>
+    <span class="nd">@to_dataframe</span>
+    <span class="k">def</span> <span class="nf">snapshot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ticker_symbols</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">snapshots</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stock</span><span class="p">,</span> <span class="n">ticker_symbols</span><span class="p">)))</span>
+
+<div class="viewcode-block" id="Market.place_order"><a class="viewcode-back" href="../../../../stockbot.ticker.sinotrade.html#stockbot.ticker.sinotrade.market.Market.place_order">[docs]</a>    <span class="k">def</span> <span class="nf">place_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                    <span class="n">quantity</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="n">action</span><span class="p">:</span> <span class="n">Action</span> <span class="o">=</span> <span class="n">Action</span><span class="o">.</span><span class="n">Buy</span><span class="p">,</span>
+                    <span class="n">price_type</span><span class="p">:</span> <span class="n">StockPriceType</span> <span class="o">=</span> <span class="n">StockPriceType</span><span class="o">.</span><span class="n">LMT</span><span class="p">,</span>
+                    <span class="n">order_type</span><span class="p">:</span> <span class="n">StockOrderType</span> <span class="o">=</span> <span class="n">StockOrderType</span><span class="o">.</span><span class="n">Common</span><span class="p">,</span>
+                    <span class="n">order_lot</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">STOCK_ORDER_LOT_COMMON</span>
+                    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Trade</span><span class="p">:</span>
+        <span class="n">order</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">Order</span><span class="p">(</span>
+            <span class="n">price</span><span class="o">=</span><span class="n">price</span><span class="p">,</span>
+            <span class="n">quantity</span><span class="o">=</span><span class="n">quantity</span><span class="p">,</span>
+            <span class="n">action</span><span class="o">=</span><span class="n">action</span><span class="p">,</span>
+            <span class="n">price_type</span><span class="o">=</span><span class="n">price_type</span><span class="p">,</span>
+            <span class="n">order_type</span><span class="o">=</span><span class="n">order_type</span><span class="p">,</span>
+            <span class="n">order_lot</span><span class="o">=</span><span class="n">order_lot</span><span class="p">,</span>
+            <span class="n">account</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">stock_account</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">place_order</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stock</span><span class="p">,</span>
+            <span class="n">order</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.list_trades"><a class="viewcode-back" href="../../../../stockbot.ticker.sinotrade.html#stockbot.ticker.sinotrade.market.Market.list_trades">[docs]</a>    <span class="k">def</span> <span class="nf">list_trades</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Trade</span><span class="p">]:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">update_status</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">stock_account</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">list_trades</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Market.touch_price"><a class="viewcode-back" href="../../../../stockbot.ticker.sinotrade.html#stockbot.ticker.sinotrade.market.Market.touch_price">[docs]</a>    <span class="k">def</span> <span class="nf">touch_price</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">topic</span><span class="p">,</span> <span class="n">quote</span><span class="p">):</span>
+        <span class="c1"># TODO:</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="Market.streaming"><a class="viewcode-back" href="../../../../stockbot.ticker.sinotrade.html#stockbot.ticker.sinotrade.market.Market.streaming">[docs]</a>    <span class="k">def</span> <span class="nf">streaming</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                  <span class="n">quote_type</span><span class="p">:</span> <span class="n">QuoteType</span> <span class="o">=</span> <span class="n">QuoteType</span><span class="o">.</span><span class="n">Tick</span><span class="p">,</span>
+                  <span class="n">intraday_odd</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+                  <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">quote</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span>
+            <span class="n">contract</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stock</span><span class="p">,</span>
+            <span class="n">quote_type</span><span class="o">=</span><span class="n">quote_type</span><span class="p">,</span>
+            <span class="n">intraday_odd</span><span class="o">=</span><span class="n">intraday_odd</span>
+        <span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, TaoLin.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

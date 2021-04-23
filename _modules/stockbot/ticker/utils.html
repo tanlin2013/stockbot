@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>stockbot.constant.yahoo &mdash; stockbot  documentation</title>
+  <title>stockbot.ticker.utils &mdash; stockbot  documentation</title>
   
 
   
@@ -137,7 +137,7 @@
         
           <li><a href="../../index.html">Module code</a> &raquo;</li>
         
-      <li>stockbot.constant.yahoo</li>
+      <li>stockbot.ticker.utils</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -152,23 +152,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for stockbot.constant.yahoo</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+  <h1>Source code for stockbot.ticker.utils</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
 
 
-<div class="viewcode-block" id="MovingAveragePeriod"><a class="viewcode-back" href="../../../stockbot.constant.html#stockbot.constant.yahoo.MovingAveragePeriod">[docs]</a><span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">MovingAveragePeriod</span><span class="p">:</span>
-    <span class="n">OneDay</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;1d&#39;</span>
-    <span class="n">FiveDay</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;5d&#39;</span>
-    <span class="n">OneMth</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;1mo&#39;</span>
-    <span class="n">ThreeMth</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;3mo&#39;</span>
-    <span class="n">SixMth</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;6mo&#39;</span>
-    <span class="n">OneYear</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;1y&#39;</span>
-    <span class="n">TwoYear</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;2y&#39;</span>
-    <span class="n">FiveYear</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;5y&#39;</span>
-    <span class="n">TenYear</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;10y&#39;</span>
-    <span class="n">YearToDate</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;ytd&#39;</span>
-    <span class="n">Max</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;max&#39;</span></div>
+<span class="k">def</span> <span class="nf">to_dataframe</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">_data</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">_data</span><span class="p">)</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">_data</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span> \
+            <span class="k">else</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="o">**</span><span class="n">_data</span><span class="p">})</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">ts</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">df</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<span class="k">def</span> <span class="nf">df_lower_columns</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">df</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
 </pre></div>
 
            </div>

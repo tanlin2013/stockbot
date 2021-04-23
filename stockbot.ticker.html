@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>stockbot.visualization package &mdash; stockbot  documentation</title>
+  <title>stockbot.ticker package &mdash; stockbot  documentation</title>
   
 
   
@@ -40,7 +40,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="stockbot.ticker.yahoo package" href="stockbot.ticker.yahoo.html" /> 
+    <link rel="next" title="stockbot.ticker.sinotrade package" href="stockbot.ticker.sinotrade.html" />
+    <link rel="prev" title="stockbot.screener package" href="stockbot.screener.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,13 +93,14 @@
 <li class="toctree-l3"><a class="reference internal" href="stockbot.constant.html">stockbot.constant package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="stockbot.investor.html">stockbot.investor package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="stockbot.screener.html">stockbot.screener package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="stockbot.ticker.html">stockbot.ticker package</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">stockbot.visualization package</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">stockbot.ticker package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-stockbot.visualization.moving_average">stockbot.visualization.moving_average module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-stockbot.visualization">Module contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stockbot-ticker-core-module">stockbot.ticker.core module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-stockbot.ticker">Module contents</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="stockbot.visualization.html">stockbot.visualization package</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="stockbot.html#module-stockbot">Module contents</a></li>
@@ -154,13 +156,13 @@
         
           <li><a href="stockbot.html">stockbot package</a> &raquo;</li>
         
-      <li>stockbot.visualization package</li>
+      <li>stockbot.ticker package</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/stockbot.visualization.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/stockbot.ticker.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -173,37 +175,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="stockbot-visualization-package">
-<h1>stockbot.visualization package<a class="headerlink" href="#stockbot-visualization-package" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="stockbot-ticker-package">
+<h1>stockbot.ticker package<a class="headerlink" href="#stockbot-ticker-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="stockbot.ticker.sinotrade.html">stockbot.ticker.sinotrade package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stockbot.ticker.sinotrade.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stockbot.ticker.sinotrade.html#module-stockbot.ticker.sinotrade.market">stockbot.ticker.sinotrade.market module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stockbot.ticker.sinotrade.html#module-stockbot.ticker.sinotrade.session">stockbot.ticker.sinotrade.session module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stockbot.ticker.sinotrade.html#module-stockbot.ticker.sinotrade">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stockbot.ticker.yahoo.html">stockbot.ticker.yahoo package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stockbot.ticker.yahoo.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stockbot.ticker.yahoo.html#module-stockbot.ticker.yahoo.market">stockbot.ticker.yahoo.market module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stockbot.ticker.yahoo.html#module-stockbot.ticker.yahoo">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-stockbot.visualization.moving_average">
-<span id="stockbot-visualization-moving-average-module"></span><h2>stockbot.visualization.moving_average module<a class="headerlink" href="#module-stockbot.visualization.moving_average" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="stockbot.visualization.moving_average.MovingAverage">
-<em class="property">class </em><code class="sig-prename descclassname">stockbot.visualization.moving_average.</code><code class="sig-name descname">MovingAverage</code><a class="reference internal" href="_modules/stockbot/visualization/moving_average.html#MovingAverage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.visualization.moving_average.MovingAverage" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt id="stockbot.visualization.moving_average.MovingAverage.plot">
-<em class="property">static </em><code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em>, <em class="sig-param"><span class="n">title</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">mav</span><span class="p">:</span> <span class="n">Tuple<span class="p">[</span>int<span class="p">, </span>int<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/stockbot/visualization/moving_average.html#MovingAverage.plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.visualization.moving_average.MovingAverage.plot" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>df</strong> – </p></li>
-<li><p><strong>title</strong> – </p></li>
-<li><p><strong>mav</strong> – </p></li>
-</ul>
-</dd>
-</dl>
-<p>Returns:</p>
-</dd></dl>
-
-</dd></dl>
-
+<div class="section" id="stockbot-ticker-core-module">
+<h2>stockbot.ticker.core module<a class="headerlink" href="#stockbot-ticker-core-module" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-stockbot.visualization">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-stockbot.visualization" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-stockbot.ticker">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-stockbot.ticker" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -213,7 +214,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="stockbot.ticker.yahoo.html" class="btn btn-neutral float-left" title="stockbot.ticker.yahoo package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="stockbot.ticker.sinotrade.html" class="btn btn-neutral float-right" title="stockbot.ticker.sinotrade package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="stockbot.screener.html" class="btn btn-neutral float-left" title="stockbot.screener package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

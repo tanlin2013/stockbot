@@ -1,5 +1,5 @@
-stockbot.api package
-====================
+stockbot.investor package
+=========================
 
 Subpackages
 -----------
@@ -7,13 +7,13 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   stockbot.api.sinotrade
-   stockbot.api.yahoo
+   stockbot.investor.analysis
+   stockbot.investor.model
 
 Module contents
 ---------------
 
-.. automodule:: stockbot.api
+.. automodule:: stockbot.investor
    :members:
    :undoc-members:
    :show-inheritance:
