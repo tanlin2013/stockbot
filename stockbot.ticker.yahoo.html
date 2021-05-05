@@ -189,50 +189,6 @@
 <em class="property">class </em><code class="sig-prename descclassname">stockbot.ticker.yahoo.market.</code><code class="sig-name descname">Market</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ticker_symbol</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/stockbot/ticker/yahoo/market.html#Market"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stockbot.ticker.yahoo.market.Market" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">yfinance.ticker.Ticker</span></code></p>
 <dl class="py method">
-<dt id="stockbot.ticker.yahoo.market.Market.history">
-<code class="sig-name descname">history</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; pandas.core.frame.DataFrame<a class="headerlink" href="#stockbot.ticker.yahoo.market.Market.history" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p></p></dd>
-</dl>
-<dl class="simple">
-<dt>period<span class="classifier">str</span></dt><dd><p>Valid periods: 1d,5d,1mo,3mo,6mo,1y,2y,5y,10y,ytd,max
-Either Use period parameter or use start and end</p>
-</dd>
-<dt>interval<span class="classifier">str</span></dt><dd><p>Valid intervals: 1m,2m,5m,15m,30m,60m,90m,1h,1d,5d,1wk,1mo,3mo
-Intraday data cannot extend last 60 days</p>
-</dd>
-<dt>start: str</dt><dd><p>Download start date string (YYYY-MM-DD) or _datetime.
-Default is 1900-01-01</p>
-</dd>
-<dt>end: str</dt><dd><p>Download end date string (YYYY-MM-DD) or _datetime.
-Default is now</p>
-</dd>
-<dt>prepost<span class="classifier">bool</span></dt><dd><p>Include Pre and Post market data in results?
-Default is False</p>
-</dd>
-<dt>auto_adjust: bool</dt><dd><p>Adjust all OHLC automatically? Default is True</p>
-</dd>
-<dt>back_adjust: bool</dt><dd><p>Back-adjusted data to mimic true historical prices</p>
-</dd>
-<dt>proxy: str</dt><dd><p>Optional. Proxy server URL scheme. Default is None</p>
-</dd>
-<dt>rounding: bool</dt><dd><p>Round values to 2 decimal places?
-Optional. Default is False = precision suggested by Yahoo!</p>
-</dd>
-<dt>tz: str</dt><dd><p>Optional timezone locale for dates.
-(default data is returned as non-localized dates)</p>
-</dd>
-<dt><a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs: dict</dt><dd><dl class="simple">
-<dt>debug: bool</dt><dd><p>Optional. If passed as False, will suppress
-error message printing to console.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt id="stockbot.ticker.yahoo.market.Market.ticker_symbol">
 <em class="property">property </em><code class="sig-name descname">ticker_symbol</code><a class="headerlink" href="#stockbot.ticker.yahoo.market.Market.ticker_symbol" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>

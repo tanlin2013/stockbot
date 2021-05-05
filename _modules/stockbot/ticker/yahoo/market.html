@@ -155,7 +155,6 @@
   <h1>Source code for stockbot.ticker.yahoo.market</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">from</span> <span class="nn">yfinance</span> <span class="kn">import</span> <span class="n">Ticker</span>
-<span class="kn">from</span> <span class="nn">stockbot.ticker.utils</span> <span class="kn">import</span> <span class="o">*</span>
 
 
 <div class="viewcode-block" id="Market"><a class="viewcode-back" href="../../../../stockbot.ticker.yahoo.html#stockbot.ticker.yahoo.market.Market">[docs]</a><span class="k">class</span> <span class="nc">Market</span><span class="p">(</span><span class="n">Ticker</span><span class="p">):</span>
@@ -169,18 +168,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ticker_symbol</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-
-    <span class="nd">@df_lower_columns</span>
-    <span class="k">def</span> <span class="nf">history</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="s2">&quot;1mo&quot;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="s2">&quot;1d&quot;</span><span class="p">,</span>
-                <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prepost</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">actions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                <span class="n">auto_adjust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">back_adjust</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                <span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rounding</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">Market</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">history</span><span class="p">(</span>
-            <span class="n">period</span><span class="o">=</span><span class="n">period</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">interval</span><span class="p">,</span>
-            <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span> <span class="n">prepost</span><span class="o">=</span><span class="n">prepost</span><span class="p">,</span> <span class="n">actions</span><span class="o">=</span><span class="n">actions</span><span class="p">,</span>
-            <span class="n">auto_adjust</span><span class="o">=</span><span class="n">auto_adjust</span><span class="p">,</span> <span class="n">back_adjust</span><span class="o">=</span><span class="n">back_adjust</span><span class="p">,</span>
-            <span class="n">proxy</span><span class="o">=</span><span class="n">proxy</span><span class="p">,</span> <span class="n">rounding</span><span class="o">=</span><span class="n">rounding</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="n">tz</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span></div>
 </pre></div>
 
            </div>
