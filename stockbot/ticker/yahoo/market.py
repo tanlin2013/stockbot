@@ -1,6 +1,5 @@
 import json
 from yfinance import Ticker
-from stockbot.ticker.utils import *
 
 
 class Market(Ticker):
@@ -15,14 +14,3 @@ class Market(Ticker):
 
     def __str__(self) -> str:
         return json.dumps(self.info, indent=4)
-
-    @df_lower_columns
-    def history(self, period="1mo", interval="1d",
-                start=None, end=None, prepost=False, actions=True,
-                auto_adjust=True, back_adjust=False,
-                proxy=None, rounding=False, tz=None, **kwargs):
-        return super(Market, self).history(
-            period=period, interval=interval,
-            start=start, end=end, prepost=prepost, actions=actions,
-            auto_adjust=auto_adjust, back_adjust=back_adjust,
-            proxy=proxy, rounding=rounding, tz=tz, **kwargs)

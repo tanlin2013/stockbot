@@ -31,12 +31,10 @@ class Market:
     def stock(self) -> Stock:
         return self._stock(self.ticker_symbol)
 
-    @df_lower_columns
     @to_dataframe
     def ticks(self, date: datetime) -> pd.DataFrame:
         return self.api.ticks(self.stock, date.strftime('%Y-%m-%d'))
 
-    @df_lower_columns
     @to_dataframe
     def kbars(self, start: datetime, end: datetime) -> pd.DataFrame:
         return self.api.kbars(
@@ -45,7 +43,6 @@ class Market:
             end=end.strftime('%Y-%m-%d')
         )
 
-    @df_lower_columns
     @to_dataframe
     def snapshot(self, ticker_symbols: List[str]) -> pd.DataFrame:
         return self.api.snapshots(list(map(self._stock, ticker_symbols)))
