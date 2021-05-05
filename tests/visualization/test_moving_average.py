@@ -8,7 +8,7 @@ class TestMovingAverage(unittest.TestCase):
 
     def test_plot(self):
         ticker = Market('2330.TW')
-        df = ticker.history(period=MovingAveragePeriod.SixMth.value)
+        df = ticker.history(period=MovingAveragePeriod.SixMth)
         MovingAverage.plot(
             df,
             title='2330',
