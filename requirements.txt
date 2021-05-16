@@ -10,3 +10,5 @@ modal==0.4.1
 torch==1.6.0
 tsfresh==0.18.0
 TA-Lib==0.4.19
+AutoTS==0.3.1
+pandas-ta==0.2.45b0
