@@ -143,6 +143,7 @@ shioaji.log
 !jest.config.js
 *.d.ts
 node_modules
+locals.json
 
 # CDK asset staging directory
 .cdk.staging
