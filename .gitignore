@@ -151,3 +151,6 @@ cdk.out
 
 # Parcel default cache directory
 .parcel-cache
+
+# sam-beta-cdk build contents for local test
+.aws-sam
