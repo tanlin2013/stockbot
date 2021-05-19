@@ -1,6 +1,6 @@
 # stockbot #
 
-![build workflow](https://github.com/tanlin2013/stockbot/actions/workflows/build.yml/badge.svg)
+![build workflow](https://github.com/tanlin2013/stockbot/actions/workflows/doc.yml/badge.svg)
 ![test workflow](https://github.com/tanlin2013/stockbot/actions/workflows/test.yml/badge.svg)
 
 This is a research program aims at autonomous stock trading,
